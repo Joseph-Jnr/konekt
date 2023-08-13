@@ -19,7 +19,7 @@ const TopBar = () => {
           <SignedIn>
             <SignOutButton>
               <div className='flex cursor-pointer'>
-                <IconLogout color='white' />
+                <IconLogout color='white' stroke={1} />
               </div>
             </SignOutButton>
           </SignedIn>
