@@ -1,6 +1,7 @@
 import { ClerkProvider } from '@clerk/nextjs'
 import '../globals.css'
 import { Inter } from 'next/font/google'
+import { BottomBar, LeftSideBar, RightSideBar, TopBar } from '@/components'
 
 export const metadata = {
   title: 'Konekt',
@@ -17,7 +18,17 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <TopBar />
+          <main>
+            <LeftSideBar />
+            <section className='main-container'>
+              <div className='w-full max-w-4xl'>{children}</div>
+            </section>
+            <RightSideBar />
+          </main>
+          <BottomBar />
+        </body>
       </html>
     </ClerkProvider>
   )
