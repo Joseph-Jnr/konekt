@@ -1,16 +1,18 @@
-import { Logo } from '@/public'
+import { Logo, LogoutIcon } from '@/public/assets'
 import { SignedIn, SignOutButton, OrganizationSwitcher } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
-import { IconLogout } from '@tabler/icons-react'
+import { IconCirclesRelation, IconLogout } from '@tabler/icons-react'
 
 const TopBar = () => {
   const isUserLoggedIn = false
 
   return (
     <nav className='topbar'>
-      <Link href='/' className='flex items-center gap-4'>
-        <Image src={Logo} alt='logo' width={28} height={28} />
+      <Link href='/' className='flex items-center gap-2'>
+        <div className='logo text-purple-600'>
+          <IconCirclesRelation size={40} />
+        </div>
         <p className='text-heading3-bold text-light-1 max-xs:hidden'>Konekt</p>
       </Link>
 
@@ -19,7 +21,7 @@ const TopBar = () => {
           <SignedIn>
             <SignOutButton>
               <div className='flex cursor-pointer'>
-                <IconLogout color='white' stroke={1} />
+                <Image src={LogoutIcon} alt='logout' />
               </div>
             </SignOutButton>
           </SignedIn>
