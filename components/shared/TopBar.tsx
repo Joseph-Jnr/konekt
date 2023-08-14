@@ -3,6 +3,7 @@ import { SignedIn, SignOutButton, OrganizationSwitcher } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { IconCirclesRelation, IconLogout } from '@tabler/icons-react'
+import { dark } from '@clerk/themes'
 
 const TopBar = () => {
   const isUserLoggedIn = false
@@ -29,6 +30,7 @@ const TopBar = () => {
 
         <OrganizationSwitcher
           appearance={{
+            baseTheme: dark,
             elements: {
               organizationSwitcherTrigger: 'py-2 px-4',
             },
