@@ -22,7 +22,7 @@ async function Page() {
         Complete your profile now to use Konekt
       </p>
 
-      <section className='mt-9 bg-dark-2 p-10'>
+      <section className='mt-9 bg-dark-2 p-10 rounded-lg'>
         <AccountProfile user={userData} btnTitle='Continue' />
       </section>
     </main>

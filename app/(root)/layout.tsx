@@ -1,7 +1,11 @@
 import { ClerkProvider } from '@clerk/nextjs'
 import '../globals.css'
 import { Inter } from 'next/font/google'
-import { BottomBar, LeftSideBar, RightSideBar, TopBar } from '@/components'
+import BottomBar from '@/components/shared/BottomBar'
+import TopBar from '@/components/shared/TopBar'
+import LeftSideBar from '@/components/shared/LeftSideBar'
+import RightSideBar from '@/components/shared/RightSideBar'
+//import { BottomBar, LeftSideBar, RightSideBar, TopBar } from '@/components/shared'
 
 export const metadata = {
   title: 'Konekt',
