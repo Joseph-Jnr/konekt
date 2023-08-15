@@ -29,7 +29,7 @@ export const sidebarLinks = [
   },
   {
     imgURL: CreateIcon,
-    route: '/create-thread',
+    route: '/create-post',
     label: 'Create Post',
   },
   {
@@ -45,13 +45,13 @@ export const sidebarLinks = [
 ]
 
 export const profileTabs = [
-  { value: 'threads', label: 'Threads', icon: ReplyIcon },
+  { value: 'posts', label: 'Posts', icon: ReplyIcon },
   { value: 'replies', label: 'Replies', icon: MembersIcon },
   { value: 'tagged', label: 'Tagged', icon: TagIcon },
 ]
 
 export const communityTabs = [
-  { value: 'threads', label: 'Threads', icon: ReplyIcon },
+  { value: 'posts', label: 'Posts', icon: ReplyIcon },
   { value: 'members', label: 'Members', icon: MembersIcon },
   { value: 'requests', label: 'Requests', icon: RequestIcon },
 ]
