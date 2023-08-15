@@ -71,7 +71,7 @@
   }
 
   .bottombar_link {
-    @apply relative flex flex-col items-center gap-2 rounded-lg p-2 sm:flex-1 sm:px-2 sm:py-2.5;
+    @apply relative flex flex-col items-center gap-2 rounded-lg p-2 sm:flex-1 sm:px-2 sm:py-2.5 hover:bg-gray-700 hover:bg-opacity-10;
   }
 
   .leftsidebar {
@@ -79,7 +79,11 @@
   }
 
   .leftsidebar_link {
-    @apply relative flex justify-start gap-4 rounded-lg p-4;
+    @apply relative flex justify-start gap-4 rounded-lg p-4 text-light-1 hover:bg-gray-700 hover:bg-opacity-10;
+  }
+
+  .leftsidebar_link_active {
+    @apply bg-purple-500 hover:bg-purple-500 hover:bg-opacity-100;
   }
 
   .pagination {
