@@ -32,3 +32,37 @@ export async function createPost({ text, author, communityId, path }: Props) {
     throw new Error(`Error creating post: ${error.message}`)
   }
 }
+
+export async function fetchPosts(pageNumber = 1, pageSize = 20) {
+  connectToDB()
+
+  //Calculate the number of posts to skip
+  const skipAmount = (pageNumber - 1) * pageSize
+
+  //Fetch posts that have no parents (top-level)
+  const postQuery = Post.find({ parentId: { $in: [null, undefined] } })
+    .sort({
+      createdAt: 'desc',
+    })
+    .skip(skipAmount)
+    .limit(pageSize)
+    .populate({ path: 'author', model: User })
+    .populate({
+      path: 'children',
+      populate: {
+        path: 'author',
+        model: User,
+        select: '_id name parentId image',
+      },
+    })
+
+  const totalPostsCount = await Post.countDocuments({
+    parentId: { $in: [null, undefined] },
+  })
+
+  const posts = await postQuery.exec()
+
+  const isNext = totalPostsCount > skipAmount + posts.length
+
+  return { posts, isNext }
+}
