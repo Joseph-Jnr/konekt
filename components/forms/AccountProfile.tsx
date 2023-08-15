@@ -1,7 +1,10 @@
 'use client'
 
+import * as z from 'zod'
+import Image from 'next/image'
 import { useForm } from 'react-hook-form'
-import { Button } from '@/components/ui/button'
+import { ChangeEvent, useState } from 'react'
+import { zodResolver } from '@hookform/resolvers/zod'
 import {
   Form,
   FormControl,
@@ -12,13 +15,10 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { UserValidation } from '@/lib/validations/users'
-import * as z from 'zod'
-import Image from 'next/image'
+import { UserValidation } from '@/lib/validations/user'
 import { ProfileIcon } from '@/public/assets'
-import { ChangeEvent, useState } from 'react'
 
 interface AccountProfileProps {
   user: {
@@ -174,7 +174,7 @@ const AccountProfile = ({ user, btnTitle }: AccountProfileProps) => {
             </FormItem>
           )}
         />
-        <Button type='submit' className='bg-primary-500 hover:bg-purple-500'>
+        <Button type='submit' className='bg-primary-500'>
           Submit
         </Button>
       </form>
