@@ -21,7 +21,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { PostValidation } from '@/lib/validations/post'
 import { createPost } from '@/lib/actions/post.actions'
 
-interface AccountProfileProps {
+interface Prop {
   user: {
     id: string
     objectId: string
@@ -60,7 +60,7 @@ const PostThread = ({ userId }: { userId: string }) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className='flex flex-col justify-start gap-10'
+        className='flex flex-col justify-start gap-4 bg-glassmorphism backdrop-blur-lg  p-5 rounded-lg mb-20'
       >
         <FormField
           control={form.control}
@@ -70,16 +70,16 @@ const PostThread = ({ userId }: { userId: string }) => {
               <FormControl className='no-focus border border-dark-4 bg-dark-3 text-light-1'>
                 <Textarea
                   placeholder="What's on your mind?"
-                  rows={10}
+                  rows={5}
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
+              {/* <FormMessage /> */}
             </FormItem>
           )}
         />
 
-        <Button type='submit' className='bg-purple-500'>
+        <Button type='submit' className='bg-purple-500 hover:bg-purple-600'>
           Post
         </Button>
       </form>

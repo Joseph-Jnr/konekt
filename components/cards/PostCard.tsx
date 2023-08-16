@@ -36,6 +36,7 @@ const PostCard = ({
   community,
   createdAt,
   comments,
+  isComment,
 }: Props) => {
   return (
     <article className='flex w-ful flex-col rounded-xl bg-dark-2 p-7'>
@@ -99,6 +100,14 @@ const PostCard = ({
                   className='cursor-pointer object-contain'
                 />
               </div>
+
+              {isComment && comments.length > 0 && (
+                <Link href={`/post/${id}`}>
+                  <div className='mt-1 text-subtle-medium text-gray'>
+                    {comments.length} replies
+                  </div>
+                </Link>
+              )}
             </div>
           </div>
         </div>
