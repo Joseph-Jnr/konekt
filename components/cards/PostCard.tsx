@@ -1,6 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { HeartIcon, ReplyIcon, RepostIcon, ShareIcon } from '@/public/assets'
+import {
+  HeartGrayIcon,
+  ReplyIcon,
+  RepostIcon,
+  ShareIcon,
+} from '@/public/assets'
 
 interface Props {
   id: string
@@ -71,10 +76,10 @@ const PostCard = ({
             <div className='mt-5 flex flex-col gap-3'>
               <div className='flex gap-3 5'>
                 <Image
-                  src={HeartIcon}
+                  src={HeartGrayIcon}
                   alt='heart'
-                  width={20}
-                  height={20}
+                  width={24}
+                  height={24}
                   className='cursor-pointer object-contain'
                 />
 
