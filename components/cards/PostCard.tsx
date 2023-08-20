@@ -61,7 +61,7 @@ const PostCard = ({
               />
             </Link>
 
-            <div className='thread-card_bar' />
+            {isComment && <div className='thread-card_bar' />}
           </div>
 
           <div className={`flex w-full flex-col ${isComment ? 'pb-3' : ''}`}>
