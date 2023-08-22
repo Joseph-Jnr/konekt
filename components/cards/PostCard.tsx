@@ -64,7 +64,7 @@ const PostCard = ({
             {isComment && <div className='thread-card_bar' />}
           </div>
 
-          <div className={`flex w-full flex-col ${isComment ? 'pb-3' : ''}`}>
+          <div className={`flex w-full flex-col ${isComment && 'pb-3'}`}>
             <Link href={`/profile/${author.id}`} className='w-fit'>
               <h4 className='cursor-pointer text-base-semibold text-light-1 capitalize'>
                 {author.username}
