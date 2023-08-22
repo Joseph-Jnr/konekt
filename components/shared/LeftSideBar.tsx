@@ -1,16 +1,16 @@
 'use client'
 
-import { SignOutButton, SignedIn, useAuth } from '@clerk/nextjs'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import { LogoutIcon } from '@/public/assets'
 import { sidebarLinks } from '@/constants'
+import { SignOutButton, SignedIn, useAuth } from '@clerk/nextjs'
 
 const LeftSideBar = () => {
   const router = useRouter()
   const pathname = usePathname()
-  const userId = useAuth()
+  const { userId } = useAuth()
 
   return (
     <section className='custom-scrollbar leftsidebar'>
