@@ -1,8 +1,8 @@
-import { Logo, LogoutIcon } from '@/public/assets'
+import { LogoutIcon } from '@/public/assets'
 import { SignedIn, SignOutButton, OrganizationSwitcher } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
-import { IconCirclesRelation, IconLogout } from '@tabler/icons-react'
+import { IconCirclesRelation } from '@tabler/icons-react'
 import { dark } from '@clerk/themes'
 
 const TopBar = () => {
@@ -27,7 +27,7 @@ const TopBar = () => {
             </SignOutButton>
           </SignedIn>
         </div>
-
+        {/* 
         <OrganizationSwitcher
           appearance={{
             baseTheme: dark,
@@ -35,7 +35,7 @@ const TopBar = () => {
               organizationSwitcherTrigger: 'py-2 px-4',
             },
           }}
-        />
+        /> */}
       </div>
     </nav>
   )
