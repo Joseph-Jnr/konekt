@@ -143,7 +143,7 @@ export async function getActivity(userId: string) {
     //collect all the child post ids (replies) from the children field
     const childPostIds = userPosts.reduce((acc, userPost) => {
       return acc.concat(userPost.children)
-    })
+    }, [])
 
     //find all posts that the user has replied to
     const replies = await Post.find({
