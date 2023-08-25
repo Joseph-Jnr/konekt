@@ -1,4 +1,4 @@
-//import { LogoutIcon } from '@/public/assets'
+import { LogoutIcon } from '@/public/assets'
 import {
   SignedIn,
   SignOutButton,
@@ -8,7 +8,7 @@ import {
 import Image from 'next/image'
 import Link from 'next/link'
 import { IconCirclesRelation } from '@tabler/icons-react'
-//import { dark } from '@clerk/themes'
+import { dark } from '@clerk/themes'
 
 const TopBar = () => {
   const isUserLoggedIn = false
@@ -23,7 +23,7 @@ const TopBar = () => {
       </Link>
 
       <div className='flex items-center gap-2'>
-        {/* <div className='block md:hidden'>
+        <div className='block md:hidden'>
           <SignedIn>
             <SignOutButton>
               <div className='flex cursor-pointer'>
@@ -31,9 +31,9 @@ const TopBar = () => {
               </div>
             </SignOutButton>
           </SignedIn>
-        </div> */}
-        <UserButton />
-        {/* 
+        </div>
+        {/* <UserButton /> */}
+
         <OrganizationSwitcher
           appearance={{
             baseTheme: dark,
@@ -41,7 +41,7 @@ const TopBar = () => {
               organizationSwitcherTrigger: 'py-2 px-4',
             },
           }}
-        /> */}
+        />
       </div>
     </nav>
   )
