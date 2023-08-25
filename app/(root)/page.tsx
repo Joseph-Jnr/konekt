@@ -1,13 +1,16 @@
 import PostCard from '@/components/cards/PostCard'
 import { fetchPosts } from '@/lib/actions/post.actions'
+import { CreateIcon } from '@/public/assets'
 import { currentUser } from '@clerk/nextjs'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function Home() {
   const result = await fetchPosts(1, 30)
   const user = await currentUser()
 
   return (
-    <div>
+    <div className='relative'>
       <h1 className='head-text text-left'>Home</h1>
 
       <section className='mt-9 flex flex-col gap-10'>
@@ -31,6 +34,15 @@ export default async function Home() {
           </>
         )}
       </section>
+
+      <div className=''>
+        <Link
+          href='/create-post'
+          className='floating-icon w-12 h-12 bg-primary-500 rounded-full fixed right-6 bottom-24 flex items-center justify-center'
+        >
+          <Image src={CreateIcon} alt='Create Post' />
+        </Link>
+      </div>
     </div>
   )
 }
