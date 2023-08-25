@@ -1,5 +1,10 @@
-import { LogoutIcon } from '@/public/assets'
-import { SignedIn, SignOutButton, OrganizationSwitcher } from '@clerk/nextjs'
+//import { LogoutIcon } from '@/public/assets'
+import {
+  SignedIn,
+  SignOutButton,
+  OrganizationSwitcher,
+  UserButton,
+} from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { IconCirclesRelation } from '@tabler/icons-react'
@@ -17,8 +22,8 @@ const TopBar = () => {
         <p className='text-heading3-bold text-light-1 max-xs:hidden'>Konekt</p>
       </Link>
 
-      <div className='flex items-center gap-1'>
-        <div className='block md:hidden'>
+      <div className='flex items-center gap-2'>
+        {/* <div className='block md:hidden'>
           <SignedIn>
             <SignOutButton>
               <div className='flex cursor-pointer'>
@@ -26,7 +31,8 @@ const TopBar = () => {
               </div>
             </SignOutButton>
           </SignedIn>
-        </div>
+        </div> */}
+        <UserButton />
         {/* 
         <OrganizationSwitcher
           appearance={{
