@@ -35,10 +35,7 @@ export default async function Home() {
         )}
       </section>
 
-      <Link
-        href='/create-post'
-        className='floating-icon w-12 h-12 bg-primary-500 rounded-full fixed right-6 bottom-24 flex items-center justify-center lg:hidden'
-      >
+      <Link href='/create-post' className='floating-btn'>
         <Image src={CreateIcon} alt='Create Post' />
       </Link>
     </div>
