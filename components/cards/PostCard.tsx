@@ -1,11 +1,15 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import {
+  HeartFilledIcon,
   HeartGrayIcon,
   ReplyIcon,
   RepostIcon,
   ShareIcon,
 } from '@/public/assets'
+import { useState } from 'react'
 
 interface Props {
   id: string
@@ -43,6 +47,11 @@ const PostCard = ({
   comments,
   isComment,
 }: Props) => {
+  const [isLiked, setIsLiked] = useState(false)
+  const handleLiked = () => {
+    setIsLiked(true)
+  }
+
   return (
     <article
       className={`flex w-ful flex-col rounded-xl ${
@@ -76,11 +85,12 @@ const PostCard = ({
             <div className='mt-5 flex flex-col gap-3'>
               <div className='flex gap-3 5'>
                 <Image
-                  src={HeartGrayIcon}
+                  src={isLiked ? HeartFilledIcon : HeartGrayIcon}
                   alt='heart'
                   width={24}
                   height={24}
                   className='cursor-pointer object-contain'
+                  onClick={handleLiked}
                 />
 
                 <Link href={`/post/${id}`}>
